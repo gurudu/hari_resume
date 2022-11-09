@@ -24,4 +24,26 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    getVisitCount();
+
 });
+  
+  
+  const functionApi = 'https://hariresume.azureedge.net/api/HttpTrigger1?code=HDldDyHHM2jSTsRA283DMOL9FYdlsJYXg5Z3Hie25d7aYjWwaMsqTw==';
+  
+  const getVisitCount = () => {
+    let count = 10;
+    fetch(functionApi)
+      .then(response => {
+        return response.json()
+      })
+      .then(response => {
+        count = response;
+        console.log("Hello 👋, you are visitor number - " + count);
+        document.getElementById('counter').innerText = count;
+      }).catch(function (error) {
+        console.log(error);
+      });
+    return count;
+  }
+  

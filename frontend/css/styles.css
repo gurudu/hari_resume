@@ -2600,6 +2600,14 @@ textarea.form-control-lg {
   margin-right: 1rem;
 }
 
+.counter {
+  margin-top:20px;
+}
+
+#counter{
+  color: #5a2d1b;
+}
+
 .btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
