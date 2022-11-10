@@ -5,6 +5,7 @@ on:
         branches: [ main ]
         paths:
         - 'frontend/**'
+        - '.github/workflows/**'
     pull_request:
         branches: [ main ]
 jobs:
@@ -18,18 +19,18 @@ jobs:
 
     - name: Upload to blob storage
       uses: azure/CLI@v1
-      run: |
-            az account set --subscription "4dfde764-8871-4fb4-8fce-5cf045558bcf”
       with:
         azcliversion: 2.0.72
+         run: |
+            az account set --subscription "4dfde764-8871-4fb4-8fce-5cf045558bcf”
         inlineScript: |
             az storage blob upload-batch  --account-name htmlresume -d '$web' -s frontend/ 
     - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-       run: |
-           az account set --subscription "4dfde764-8871-4fb4-8fce-5cf045558bcf”
+      uses: azure/CLI@v1 
       with:
         azcliversion: 2.0.72
+        run: |
+           az account set --subscription "4dfde764-8871-4fb4-8fce-5cf045558bcf”
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name htmlresume --name htmlresume --resource-group Cloud_Html_Resume
   # Azure logout 
