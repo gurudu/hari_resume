@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', event => {
 });
   
   
-  const functionApi = 'https://hariresume.azureedge.net/api/HttpTrigger1?code=HDldDyHHM2jSTsRA283DMOL9FYdlsJYXg5Z3Hie25d7aYjWwaMsqTw==';
+  const functionApi = 'https://hariresumefapp.azurewebsites.net/api/HttpTrigger1?code=2IN_llAmBShI1fsvmlI4qNsWMdHZi7FImIAoFsKf2ComAzFuTESc2w==';
   
   const getVisitCount = () => {
     let count = 10;
